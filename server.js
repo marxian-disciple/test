@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000; // Use Azure-assigned port
 
 app.use(express.static(__dirname)); // Serve static files (e.g., index.html)
 
@@ -15,4 +15,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = app; // Export the app to use in tests
+module.exports = app; // Export for testing
